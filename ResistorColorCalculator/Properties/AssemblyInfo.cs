@@ -35,4 +35,5 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyFileVersion("1.0.0.0")]
 [assembly: InternalsVisibleTo("ResistorColorCalculator.Tests1")]
 [assembly: InternalsVisibleTo("ResistorColorCalculator.Explorables")]
+[assembly: InternalsVisibleTo("ResistorColorCalculator.Tests")]
 

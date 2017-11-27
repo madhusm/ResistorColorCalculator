@@ -5,7 +5,7 @@ using ResistorColorCalculator.Models;
 namespace TestResistorCalculator.UnitTests
 {
     [TestClass]
-    public class UnitTest1
+    public class ResitorUnitTest
     {
         [TestMethod]
         public void ShouldReturnZeroWhenBandValueIsNull()
@@ -15,11 +15,27 @@ namespace TestResistorCalculator.UnitTests
             Assert.AreEqual(isReturningZero, 0.0);
         }
         [TestMethod]
-        public void ShouldReturnZeroWhenBandValueIsNull()
+        public void ShouldReturnValueWhenBandValueIsNotNull()
         {
             var sut = new Resistor();
+            sut.BandAColor = "Brown";
+            sut.BandBColor = "Orange";
+            sut.BandCColor = "Gold";
+            sut.BandDColor = "Violet";
             var isReturningZero = sut.CalculateOhmValue();
-            Assert.AreEqual(isReturningZero, 0.0);
+            Assert.AreNotEqual(isReturningZero, 0.0);
+        }
+
+        [TestMethod]
+        public void ShouldReturnDefinetValueWhenBandValueIsNotNull()
+        {
+            var sut = new Resistor();
+            sut.BandAColor = "Brown";
+            sut.BandBColor = "green";
+            sut.BandCColor = "Silver";
+            sut.BandDColor = "Violet";
+            var isReturningZero = sut.CalculateOhmValue();
+            Assert.AreEqual(isReturningZero, 0.15);
         }
     }
 }

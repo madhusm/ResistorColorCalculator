@@ -1,6 +1,6 @@
 ﻿namespace ResistorColorCalculator.Models
 {
-    public interface I4BandRes: IOhmValueCalculator
+    public interface I4BandRes
     {
          string BandAColor { get; set; }
          string BandBColor { get; set; }

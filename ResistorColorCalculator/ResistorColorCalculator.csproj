@@ -146,8 +146,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\5BandResistor.cs" />
-    <Compile Include="Models\I5BandRes.cs" />
     <Compile Include="Models\IOhmValueCalculator.cs" />
     <Compile Include="Models\I4BandRes.cs" />
     <Compile Include="Models\Resistor.cs" />

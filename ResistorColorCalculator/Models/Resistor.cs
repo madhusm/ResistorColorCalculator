@@ -6,7 +6,7 @@ using System.Web;
 
 namespace ResistorColorCalculator.Models
 {
-    public class Resistor : ValueFetcher, I4BandRes
+    public class Resistor : ValueFetcher, I4BandRes, IOhmValueCalculator
     {
         private string bandAColor ;
         private string bandBColor ;

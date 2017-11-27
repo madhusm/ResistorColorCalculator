@@ -24,28 +24,13 @@ namespace ResistorColorCalculator.Controllers
             ViewBag.DigitColors = new SelectList(Enum.GetValues(typeof(BandDigitEnum)).Cast<BandDigitEnum>());
             ViewBag.MultiplierColors = new SelectList(res.GetBandMultiplierColor());
             ViewBag.TolleranceColor = new SelectList(res.GetBandToleranceColor(), "Value", "Key");
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                // I4BandRes res = new Resistor();
-                
-                return View(res);
+                return View(new Resistor());
             }
-            return View(new Resistor());
+            return View(res);
         }
 
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
     }
 }

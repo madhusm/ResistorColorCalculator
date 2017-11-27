@@ -1,0 +1,66 @@
+﻿@model ResistorColorCalculator.Models.Resistor
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@using (Html.BeginForm())
+{
+
+    <div class="jumbotron">
+        <h1>Resistor Color Code Calculator</h1>
+
+    </div>
+
+    <div class="row">
+        @Html.ValidationSummary(true)
+        <div class="col-xs-12">
+            <div class="col-xs-6" style="padding-top: 5px;">
+                First Band Color
+                @Html.DropDownListFor(m => m.BandAColor, ViewBag.DigitColors as SelectList, "Select 1st Color", new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.BandAColor, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-xs-6" style="padding-top: 5px;">
+                Second Band Color
+                @Html.DropDownListFor(m => m.BandBColor, ViewBag.DigitColors as SelectList, "Select 2nd Color", new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.BandBColor, "", new { @class = "text-danger" })
+
+            </div>
+        </div>
+        <div class="col-xs-12 panel-default">
+            <div class="col-xs-6" style="padding-top: 5px;">
+                3rd Band Color
+                @Html.DropDownListFor(m => m.BandCColor, ViewBag.MultiplierColors as SelectList, "Select 3rd Color", new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.BandCColor, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-xs-6" style="padding-top: 5px;">
+                4th Band Color
+                @Html.DropDownListFor(m => m.BandDColor, ViewBag.TolleranceColor as SelectList, "Select 4th Color", new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.BandDColor, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="col-xs-6">
+                <input type="submit" value="Calculate" class="btn-primary" style="padding-top: 5px;" />
+            </div>
+            <div class="col-xs-6"></div>
+        </div>
+    </div>
+    <div class="row" style="padding-top: 5px;">
+        @{
+            var value = Model.CalculateOhmValue().ToString();
+            if (value != "0")
+            {
+                <div class="col-xs-12" style="padding-top: 5px;">
+                    <p class="alert-success ">
+                        Resistance Is:
+                        @Html.DisplayFor(m => value, "testResults") ohms Tollerance:(+/-)@Html.DisplayFor(m => m.BandDColor, "testResults1") %
+                    </p>
+                </div>
+
+            }
+
+        }
+    </div>
+
+}

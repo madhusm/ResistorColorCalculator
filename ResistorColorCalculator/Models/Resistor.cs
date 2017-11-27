@@ -23,7 +23,6 @@ namespace ResistorColorCalculator.Models
 
         public double CalculateOhmValue()
         {
-            var test = GetBandToleranceColor();
             int bandAnum = GetBandNumber(bandAColor);
             int bandBnum = GetBandNumber(bandBColor);
             double bandCnum = GetBandMultiplier(bandCColor);

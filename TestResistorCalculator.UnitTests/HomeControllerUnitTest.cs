@@ -38,12 +38,6 @@ namespace TestResistorCalculator.UnitTests
             sut.WithCallTo(p => p.Index(res)).ShouldRenderDefaultView();
 
         }
-        [TestMethod]
-        public void ShouldHaveViewBags()
-        {
-            var sut = new HomeController();
-            //sut.ViewBag.Message.ToString().Should().ShouldBeEquivalentTo("");
-
-        }
+       
     }
 }
